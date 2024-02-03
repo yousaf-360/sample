@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    
     <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <style>
-      h1{
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center;
-      }
+    
       #banner{
-        width: 100%;
+        width: 90%;
         height: 350px;
         object-fit: cover;
       }
-      h2{
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
 
-      .bodytext{
-        font-family: Roboto;
-        color: rgb(80,80,80);
+      .container{
+        text-align: left;
+        margin: 0 0 0 0;
       }
-
-      #container{
-        max-width: 720px;
-        text-align: center;
-        margin: 0 auto 0 auto;
-      }
-
+ 
     </style>
   </head>
   <body>
-    <div id='container'>
-      <h1>Our Careers</h1>
-      <img id="banner" src='static/new_img.jpg'>
-      <h2>About Our Careers</h2>
-      <p class=bodytext>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis sem eu tortor lacinia, nec aliquet metus auctor. Nullam lacinia eget lacus venenatis lobortis. Duis turpis ipsum, fringilla fringilla mollis et, cursus sed justo. Aenean sagittis semper felis in viverra. Sed nunc nisi, posuere ut venenatis ultricies, porttitor auctor lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed efficitur quam. Aenean laoreet nunc viverra imperdiet egestas. Quisque malesuada fermentum ultricies. Cras quis lacus rhoncus lectus faucibus commodo et feugiat ex. Nulla eu nibh orci.</p>
-      <h2>Open Positions</h2>
-      <p class='bodytext'>TODO - Show the jobs here</p>
-      <div style='text-align:center;'>
-        <button>Contact Us</button>
-        <p>Copyright 2022.</p>
+    <div class='text-center md-4 ms-4'>
+      <h1 class='text-center mt-2 mb-4'>Our Careers</h1>
+      <img class='img-fluid' id='banner' src='static/new_img.jpg'>
+      <h2 class='text-center mt-2 mb-4'>About Our Careers</h2>
+      <p class='lead'>um dolor sit amet, consectetur adipiscing elit. Sed facilisis sem eu tortor lacinia, nec aliquet metus auctor. Nullam lacinia eget lacus venenatis lobortis. Duis turpis ipsum, fringilla fringilla mollis et, cursus sed justo. Aenean sagittis semper felis in viverra. Sed nunc nisi, posuere ut venenatis ultricies, porttitor auctor lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed efficitur quam. Aenean laoreet nunc viverra imperdiet egestas. Quisque malesuada fermentum ultricies. Cras quis lacus rhoncus lectus faucibus commodo et feugiat ex. Nulla eu nibh orci.</p>
+      <h2 class='text-center mt-2 mb-4'>Open Positions</h2>
+      <div class='container'>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+       
+        {% endfor %}
+      </div>
+      <div style='text-center'>
+        <button class='btn btn-primary btn-lg'>Contact Us</button>
+        <p class='mt-4'>Copyright 2022.</p>
       </div>
       
     </div>
