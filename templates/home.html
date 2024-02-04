@@ -13,36 +13,56 @@
     <style>
     
       #banner{
-        width: 90%;
+        width: 100%;
         height: 350px;
         object-fit: cover;
+        margin-bottom: 16px;
       }
 
       .container{
         text-align: left;
         margin: 0 0 0 0;
       }
+
+      body{
+        overflow-x:hidden;
+      }
  
     </style>
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    {% include 'nav.html' %}
+    <img class='img-fluid' id='banner' src='static/new_img.jpg'>
     <div class='text-center md-4 ms-4'>
       <h1 class='text-center mt-2 mb-4'>Our Careers</h1>
-      <img class='img-fluid' id='banner' src='static/new_img.jpg'>
-      <h2 class='text-center mt-2 mb-4'>About Our Careers</h2>
+
+    <div class="row" style="margin-bottom:16px;">
+      <div class="col-md-6">
       <p class='lead'>um dolor sit amet, consectetur adipiscing elit. Sed facilisis sem eu tortor lacinia, nec aliquet metus auctor. Nullam lacinia eget lacus venenatis lobortis. Duis turpis ipsum, fringilla fringilla mollis et, cursus sed justo. Aenean sagittis semper felis in viverra. Sed nunc nisi, posuere ut venenatis ultricies, porttitor auctor lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sed efficitur quam. Aenean laoreet nunc viverra imperdiet egestas. Quisque malesuada fermentum ultricies. Cras quis lacus rhoncus lectus faucibus commodo et feugiat ex. Nulla eu nibh orci.</p>
-      <h2 class='text-center mt-2 mb-4'>Open Positions</h2>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+        <img src="/static/work.jpg" style="height:270px;border-radius: 4px;">
+      </div>
+    </div>
+      
+      <h2 class='text-center mt-2 mb-4'>Job Openings</h2>
       <div class='container'>
         {% for job in jobs %}
           {% include 'jobitem.html' %}
        
         {% endfor %}
       </div>
-      <div style='text-center'>
-        <button class='btn btn-primary btn-lg'>Contact Us</button>
-        <p class='mt-4'>Copyright 2022.</p>
+      <div class='text-center'>
+        <a href='mailto:nonameg.12@gmail.com?subject=Contact%20Us&body=Your%20Query%20%3A%20%3CQuery%20Here%3E' class='btn btn-primary btn-lg'>Contact Us</a>
+
       </div>
       
+      
+
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
